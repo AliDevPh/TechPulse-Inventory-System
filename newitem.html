@@ -72,8 +72,8 @@
             const errorMessage = getQueryParam('error');
             if (errorMessage === 'insertion_failed') {
                 document.getElementById('error-message').innerText = 'Error: Failed to insert item. Please try again.';
-            } else if (errorMessage === 'duplicate_product_id') {
-        document.getElementById('error-message').innerText = 'Error: Product ID already exists. Please use a different one.';
+            } else if (errorMessage === 'duplicate_product') {
+        document.getElementById('error-message').innerText = 'Error: Product ID or Product name already exists. Please use a different one.';
     }
       };
 </script>

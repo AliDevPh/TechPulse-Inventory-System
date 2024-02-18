@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 
     if (mysqli_num_rows ($result) > 0) {
-        header('Location: ../newitem.html?error=duplicate_product_id');
+        header('Location: ../newitem.html?error=duplicate_product');
         exit();
     } else {
         $sql = "INSERT INTO inventory (`ProdName`, `ProdID`, `Stock`, `Price ($)`) VALUES (?, ?, ?, ?)";

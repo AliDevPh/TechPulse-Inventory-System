@@ -8,9 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stock = $_POST['stock'];
     $price = $_POST['prices'];
 
-    $sql = "SELECT * FROM inventory WHERE ProdID = ? ";
+    $sql = "SELECT * FROM inventory WHERE ProdID = ? OR ProdName = ? ";
     $stmt = mysqli_prepare($connection, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $productid);
+    mysqli_stmt_bind_param($stmt, "ss", $productid, $productname);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     
